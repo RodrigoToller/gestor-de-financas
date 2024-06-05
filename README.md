@@ -1,7 +1,7 @@
 # Gestão de Finanças
 Este é um projeto simples de uma aplicação web para gerenciar finanças pessoais. A aplicação permite ao usuário cadastrar dívidas e dinheiro disponível, e gerar um relatório com o saldo atual.
 
-**Apenas DESKTOP**
+
 
 ## Índice
 - [Visão Geral](#visão-geral)
