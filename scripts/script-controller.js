@@ -1,68 +1,73 @@
 
-let dividaA = 0;
+let dividas = [];
 
 function saveDivida() {
-  let divida = document.getElementById('divida').value;
-  
-
-
-  divida = parseInt(divida);
-  localStorage.setItem('dividas', divida);
-  let dividas = JSON.parse(localStorage.getItem('dividas')) 
-
-  dividaA = dividaA + dividas;
-
-  document.getElementById('divida').value = "";
-
+    let divida = parseInt(document.getElementById('divida').value);
+    
+    if (!isNaN(divida)) {
+        dividas.push(divida);
+        localStorage.setItem('dividas', JSON.stringify(dividas));
+        updateDividasOutput();
+        document.getElementById('divida').value = "";
+    } else {
+        alert("Por favor, insira um valor válido para a dívida.");
+    }
 }
 
 function getDividas() {
-  
-  let output = "R$" + dividaA +  ",00";
-  
-  document.getElementById('output-divida').innerText = output;
+    updateDividasOutput();
 }
 
+function updateDividasOutput() {
+    let output = "";
+    if (dividas.length > 0) {
+        output = dividas.map(divida => `R$ ${divida},00`).join('\n');
+    } else {
+        output = "Nenhuma dívida cadastrada.";
+    }
+    document.getElementById('output-divida').innerText = output;
+}
 
-
-let dinheiroA = 0;
+let dinheiros = [];
 
 function saveDinheiro() {
-  let dinheiro = document.getElementById('dinheiro').value;
-  
-  dinheiro = parseInt(dinheiro);
-  localStorage.setItem('dinheiros', dinheiro);
-  let dinheiros = JSON.parse(localStorage.getItem('dinheiros')) 
-
-  dinheiroA = dinheiroA + dinheiros;
-  
-
-
-
+    let dinheiro = parseInt(document.getElementById('dinheiro').value);
+    
+    if (!isNaN(dinheiro)) {
+        dinheiros.push(dinheiro);
+        localStorage.setItem('dinheiros', JSON.stringify(dinheiros));
+        updateDinheiroOutput();
+        document.getElementById('dinheiro').value = "";
+    } else {
+        alert("Por favor, insira um valor válido para o dinheiro.");
+    }
 }
 
 function getDinheiro() {
-  
-  let output = "R$" + dinheiroA +  ",00";
-  
-  document.getElementById('output-dinheiro').innerText = output;
+    updateDinheiroOutput();
 }
 
-
-function getRelatorio(){
-
-  let msgDinheiro = "R$" + dinheiroA +  ",00";
-  let msgDivida = "R$" + dividaA +  ",00";
-
-
-  let msgRelatorio = "Você possui a quantia de: " + msgDinheiro + "\n" + "Porém possui uma Divida de: " + msgDivida;
-
-
-  let calculo = dinheiroA - dividaA;
-  let msgCalculo = "R$" + calculo + ",00";
-
-  document.getElementById('output-relatorio').innerText = msgRelatorio + "\n" + "Seu saldo final é de: " + msgCalculo;
-
-
-
+function updateDinheiroOutput() {
+    let output = "";
+    if (dinheiros.length > 0) {
+        output = dinheiros.map(dinheiro => `R$ ${dinheiro},00`).join('\n');
+    } else {
+        output = "Nenhum valor de dinheiro cadastrado.";
+    }
+    document.getElementById('output-dinheiro').innerText = output;
 }
+
+function getRelatorio() {
+    let totalDinheiro = dinheiros.reduce((acc, curr) => acc + curr, 0);
+    let totalDivida = dividas.reduce((acc, curr) => acc + curr, 0);
+    let saldoFinal = totalDinheiro - totalDivida;
+    
+    let msgDinheiro = "R$" + totalDinheiro + ",00";
+    let msgDivida = "R$" + totalDivida + ",00";
+    let msgSaldoFinal = "R$" + saldoFinal + ",00";
+
+    let msgRelatorio = `Você possui a quantia de: ${msgDinheiro}\nPorém possui uma dívida de: ${msgDivida}\nSeu saldo final é de: ${msgSaldoFinal}`;
+
+    document.getElementById('output-relatorio').innerText = msgRelatorio;
+}
+
