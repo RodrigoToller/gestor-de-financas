@@ -1,3 +1,5 @@
+
+
 .container {
 
     display: grid;
@@ -16,6 +18,7 @@
 }
 
 .container h2{
+
 
     text-align: center;
     color: var(--text-color-primary);
@@ -36,6 +39,16 @@
 
 
 }
+
+.container label{
+
+    color: var(--primary-color);
+    font-size: 2vh;
+    margin: 5px;
+    font-weight: bold;
+
+}
+
 
 .container button{
 
@@ -109,4 +122,26 @@
     }
 
 
+}
+
+
+.container div{
+
+    background-color: #ffffff;
+    border: 2px solid var(--primary-color);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2vh;
+
+}
+
+.saldo-positivo {
+    color: green;
+}
+
+.saldo-negativo {
+    color: red;
 }

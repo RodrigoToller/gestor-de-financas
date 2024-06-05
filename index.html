@@ -21,6 +21,9 @@
     <main>
         <div class="container">
             <h2>Dívidas <i class="fi fi-rs-bank"></i></h2>
+            <label>Titulo</label>
+            <input type="text" id="titulo-divida" placeholder="Digite o nome para sua divida">
+            <label>Valor da dívida</label>
             <input type="number" id="divida" placeholder="Digite sua divida">
             <button onclick="saveDivida()">Cadastrar Dívida</button>
             <button onclick="getDividas()"> Mostrar Dívidas</button>
@@ -29,6 +32,9 @@
 
         <div class="container">
             <h2>Dinheiro <i class="fi fi-rs-coins"></i></h2>
+            <label>Titulo</label>
+            <input type="text" id="titulo-dinheiro" placeholder="Digite o nome para seu dinheiro">
+            <label>Seu Dinheiro</label>
             <input type="number" id="dinheiro" placeholder="Digite seu dinheiro">
             <button onclick="saveDinheiro()">Cadastrar Dinheiro</button>
             <button onclick="getDinheiro()"> Mostrar Dinheiro</button>
@@ -38,7 +44,12 @@
         <div class="container">
             <h2> Relatório <i class="fi fi-rs-note"></i></h2>
             <button onclick="getRelatorio()">Gerar Relatório</button>
-            <p id="output-relatorio"></p>
+            <div>
+                <p id="output-relatorio"></p>
+                <span id="saldo-final"></span>
+            </div>
+            
+            
         </div>
     </main>
     <script src="scripts/script-controller.js"></script>
