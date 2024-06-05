@@ -1,0 +1,26 @@
+@import url('../npm-pacotes/node_modules/@flaticon/flaticon-uicons/css/all/all.css');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url(components/header.css);
+@import url(components/bloco.css);
+
+
+:root{
+
+    --text-color-primary: #F2A154;
+    --background-color-primary: #F7F6E7;
+    --primary-color:  #314E52;
+    --secondary-color: #E7E6E1;
+}
+
+
+body{
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}

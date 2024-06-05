@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/reset.css">
+    <link rel="stylesheet" href="styles/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <header class="cabecalho">
+        <h1 class="cabecalho-item"><i class="fi fi-rs-usd-circle item"></i>Gestão de Finanças </h1>
+        <nav class="cabecalho-item">
+          <a class="item" href="#divida">Dívidas</a>
+          <a class="item" href="#dinheiro">Dinheiro</a>
+          <a class="item" href="#relatorio">Relatório</a>
+        </nav>
+      </header>
+
+    <main>
+        <div class="container">
+            <h2>Dívidas <i class="fi fi-rs-bank"></i></h2>
+            <input type="number" id="divida" placeholder="Digite sua divida">
+            <button onclick="saveDivida()">Cadastrar Dívida</button>
+            <button onclick="getDividas()"> Mostrar Dívidas</button>
+            <p id="output-divida"></p>
+        </div>
+
+        <div class="container">
+            <h2>Dinheiro <i class="fi fi-rs-coins"></i></h2>
+            <input type="number" id="dinheiro" placeholder="Digite seu dinheiro">
+            <button onclick="saveDinheiro()">Cadastrar Dinheiro</button>
+            <button onclick="getDinheiro()"> Mostrar Dinheiro</button>
+            <p id="output-dinheiro"></p>
+        </div>
+
+        <div class="container">
+            <h2> Relatório <i class="fi fi-rs-note"></i></h2>
+            <button onclick="getRelatorio()">Gerar Relatório</button>
+            <p id="output-relatorio"></p>
+        </div>
+    </main>
+    <script src="scripts/script-controller.js"></script>
+</body>
+</html>
+
+
+

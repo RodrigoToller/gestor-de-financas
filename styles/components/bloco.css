@@ -1,0 +1,64 @@
+.container {
+
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap: 5px;
+    padding: 10vh;
+
+    background-color: var(--background-color-primary);
+    margin: 50px;
+    
+
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 1px 1px 20px var(--primary-color);
+
+}
+
+.container h2{
+
+    text-align: center;
+    color: var(--text-color-primary);
+    align-self: center;
+    text-shadow: 1px 0px 10px #fdd784;
+    font-size: 5vh;
+
+}
+
+.container input{
+
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    font-size: 2vh;
+
+
+
+}
+
+.container button{
+
+    padding: 10px;
+    margin: 5px;
+    border-radius: 8px;
+    border: 2px solid var(--primary-color);
+    background-color: var(--primary-color);
+    color: var(--background-color-primary);
+    font-size: 2vh;
+
+}
+
+.container p{
+
+
+    background-color: #ffffff;
+    border: 2px solid var(--primary-color);
+    padding: 10px;
+    border-radius: 10px;
+    margin: 5px;
+    text-align: center;
+    color: var(--primary-color);
+    font-size: 2vh;
+
+}
