@@ -55,3 +55,30 @@ h1{
     margin-top: 1vh;
 
 }
+
+@media screen and (max-width: 450px)
+{
+
+    .cabecalho{
+        gap: 5%;
+    }
+
+    .cabecalho-item{
+        gap: 5%;
+        margin: none;
+    }
+
+    .cabecalho-item .item{
+        font-size: 2vh;
+    }
+
+    .cabecalho-item i{
+        font-size: 2vh;
+    }
+
+   h1 {
+    font-size: 1.5vh;
+    gap: 10px;
+    margin-left: 20px;
+   }
+}
