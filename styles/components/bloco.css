@@ -49,6 +49,17 @@
 
 }
 
+.container button:hover{
+
+    color: var(--text-color-primary);
+    cursor: pointer;
+    text-shadow: 1px 0px 10px #fdd784;
+    box-shadow: 1px 1px 20px #fdd784;
+
+
+
+}
+
 .container p{
 
 
