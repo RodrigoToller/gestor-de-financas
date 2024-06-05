@@ -67,22 +67,27 @@ function getRelatorio() {
     let totalDivida = dividas.reduce((acc, curr) => acc + curr.valor, 0);
     let saldoFinal = totalDinheiro - totalDivida;
     
-    let msgDinheiro = "R$" + totalDinheiro + ",00";
-    let msgDivida = "R$" + totalDivida + ",00";
+    let msgDinheiro = "R$ " + totalDinheiro + ",00";
+    let msgDivida = "R$ " + totalDivida + ",00";
 
     let msgRelatorio = `Você possui a quantia de: ${msgDinheiro}\nPorém possui uma dívida de: ${msgDivida}`;
     let outputRelatorio = document.getElementById('output-relatorio');
     outputRelatorio.innerText = msgRelatorio;
 
     let saldoFinalElement = document.getElementById('saldo-final');
-    let msgSaldoFinal = "R$" + saldoFinal + ",00";
-    saldoFinalElement.innerText = msgSaldoFinal;
+    let msgSaldoFinal = "R$ " + saldoFinal + ",00";
 
     if (saldoFinal >= 0) {
         saldoFinalElement.classList.remove('saldo-negativo');
         saldoFinalElement.classList.add('saldo-positivo');
+
+        saldoFinalElement.innerText = "Parabéns, mesmo com todas as suas dividas, você ainda tem: " + msgSaldoFinal;
+
+
     } else {
         saldoFinalElement.classList.remove('saldo-positivo');
         saldoFinalElement.classList.add('saldo-negativo');
+
+        saldoFinalElement.innerText = "Oh não, suas dividas estão altas de mais, você esta devendo: " + msgSaldoFinal;
     }
 }
